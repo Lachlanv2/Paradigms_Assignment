@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.net.http.HttpClient;
 import java.util.Scanner; //https://www.tutorialspoint.com/java/java_user_input.html
 
 public class main {
@@ -13,9 +14,15 @@ public class main {
     //System.out.println("\nWhat is your username");
     //String playername = obj.nextLine();
 
+    //TODO, Get language, Get Country Name,
 
-    httprequest.httpmethod();
 
+    String countrycode = httprequest.httpmethod(); // get country code
+
+    String countryname = countryname.countrynames(countrycode);
+
+    String language = languagehhtp.languagehttp(countrycode); // get countries language
 
   }
 }
+

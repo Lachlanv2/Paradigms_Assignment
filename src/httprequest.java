@@ -3,20 +3,40 @@ import java.net.URI;
 import java.net.http.HttpClient; // these imports from https://zetcode.com/java/getpostrequest/
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.stream.Collectors;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.util.Random;
 
 public class httprequest { //https://www.w3schools.com/java/java_methods_param.asp
-  static void httpmethod() throws IOException, InterruptedException {
+  static String httpmethod() throws IOException, InterruptedException {
     try (HttpClient client = HttpClient.newHttpClient()) {
 
       HttpRequest request = HttpRequest.newBuilder()
-              .uri(URI.create("https://restcountries.com/v3.1/all?fields=name")) //https://zetcode.com/java/getpostrequest/
+              .uri(URI.create("https://restcountries.com/v3.1/all?fields=cca3")) //https://zetcode.com/java/getpostrequest/
               .build();
 
       HttpResponse<String> response = client.send(request,
               HttpResponse.BodyHandlers.ofString());
 
-      //System.out.println(response.body()); prints all countries
+
+      JSONArray jasoncountry = new JSONArray(response.body()); // who's jason??!?! | parses json into array
+      Random randomno = new Random();
+      JSONObject randomcounty = jasoncountry.getJSONObject(randomno.nextInt(jasoncountry.length())); // https://www.baeldung.com/java-org-json
+      String extractedcountry = randomcounty.getString("cca3");
+
+
+      //DEBUG PRINTS
+      //System.out.println(response.body()); //prints all countries
+      // System.out.println(extractedcountry); // prints chosen country
+      //System.out.println(randomno);
+      return extractedcountry;
+
+
+
+
+
+      // Really bad string editing I tried but failed miserably
+      /*
       String stringconversion = response.body();
       //stringconversion = stringconversion.replace("{", "");
       //stringconversion = stringconversion.replace("}", "");
@@ -31,6 +51,7 @@ public class httprequest { //https://www.w3schools.com/java/java_methods_param.a
               .findFirst()
               .orElse("");
       System.out.println(specificLine);
+      */
     }
   }
 }
