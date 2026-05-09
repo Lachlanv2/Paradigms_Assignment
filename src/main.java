@@ -21,7 +21,7 @@ public class main {
 
     String countryname = countryname.countrynames(countrycode);
 
-    String language = languagehhtp.languagehttp(countrycode); // get countries language
+    String language = languagehhtp.languagehttp(countrycode); // get countries languages
 
   }
 }
