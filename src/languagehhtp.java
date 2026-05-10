@@ -29,7 +29,7 @@ public class languagehhtp {
 
       String NEWlanguagecode = locale.getLanguage();
 
-      return NEWlanguagecode + " " + languageName;
+      return languageName;
 
     }
   }
