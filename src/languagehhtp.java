@@ -1,6 +1,6 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
-
+import com.ibm.icu.util.ULocale;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient; // these imports from https://zetcode.com/java/getpostrequest/
@@ -24,8 +24,12 @@ public class languagehhtp {
 
       String languageCode = extractedlanguage.keys().next(); // https://www.baeldung.com/java-org-json
       String languageName = extractedlanguage.getString(languageCode);
-      //System.out.println(languageName);
-      return languageCode + " " + languageName;
+
+      ULocale locale = ULocale.forLanguageTag(languageCode);
+
+      String NEWlanguagecode = locale.getLanguage();
+
+      return NEWlanguagecode + " " + languageName;
 
     }
   }

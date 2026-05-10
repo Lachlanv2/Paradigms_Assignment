@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
+
+
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <repositories>
+        <repository>
+            <id>dynomakeRepository</id>
+            <url>https://maven.dynomake.it/releases</url>
+        </repository>
+    </repositories>
+
 
     <groupId>com.example</groupId>
     <artifactId>my-app</artifactId>
@@ -20,5 +30,18 @@
             <artifactId>json</artifactId>
             <version>20240303</version>
         </dependency>
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>78.3</version>
+        </dependency>
+        <dependency>
+            <groupId>space.dynomake</groupId>
+            <artifactId>libretranslate-java</artifactId>
+            <version>1.0.9</version>
+        </dependency>
     </dependencies>
 </project>
+
+
+

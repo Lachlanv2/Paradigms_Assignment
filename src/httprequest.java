@@ -12,7 +12,7 @@ public class httprequest { //https://www.w3schools.com/java/java_methods_param.a
     try (HttpClient client = HttpClient.newHttpClient()) {
 
       HttpRequest request = HttpRequest.newBuilder()
-              .uri(URI.create("https://restcountries.com/v3.1/all?fields=cca3")) //https://zetcode.com/java/getpostrequest/
+              .uri(URI.create("https://restcountries.com/v3.1/all?fields=cca2")) //https://zetcode.com/java/getpostrequest/
               .build();
 
       HttpResponse<String> response = client.send(request,
@@ -22,7 +22,7 @@ public class httprequest { //https://www.w3schools.com/java/java_methods_param.a
       JSONArray jasoncountry = new JSONArray(response.body()); // who's jason??!?! | parses json into array
       Random randomno = new Random();
       JSONObject randomcounty = jasoncountry.getJSONObject(randomno.nextInt(jasoncountry.length())); // https://www.baeldung.com/java-org-json
-      String extractedcountry = randomcounty.getString("cca3");
+      String extractedcountry = randomcounty.getString("cca2");
 
 
       //DEBUG PRINTS
