@@ -7,7 +7,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class countryname {
+public class country {
     public static String countrynames(String countrycode) throws InterruptedException, IOException {
         try (HttpClient client = HttpClient.newHttpClient()) {
 
@@ -18,14 +18,18 @@ public class countryname {
             HttpResponse<String> response = client.send(request,
                     HttpResponse.BodyHandlers.ofString());
 
-            JSONArray jasoncountry = new JSONArray(response.body());
-            JSONObject country = jasoncountry.getJSONObject(0);
-            JSONObject extractedlanguage = country.getJSONObject("official");
+            JSONArray jasoncountry = new JSONArray(response.body()); //parse jarva
 
-            String languageCode = extractedlanguage.keys().next(); // https://www.baeldung.com/java-org-json
-            String languageName = extractedlanguage.getString(languageCode);
-            System.out.println(languageName);
-            return languageName;
+            JSONObject country = jasoncountry.getJSONObject(0);
+            String extractedlanguage = country.getJSONObject("name").getString("common");
+
+
+
+
+            //String languageCode = extractedlanguage.keys().next(); // https://www.baeldung.com/java-org-json
+            //String languageName = extractedlanguage.getString(languageCode);
+            //System.out.println(extractedlanguage);
+            return extractedlanguage;
 
         }
     }

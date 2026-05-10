@@ -14,15 +14,18 @@ public class main {
     //System.out.println("\nWhat is your username");
     //String playername = obj.nextLine();
 
-    //TODO, Get language, Get Country Name,
+    //TODO, get translation class, replace spaces with %20
 
 
     String countrycode = httprequest.httpmethod(); // get country code
 
-    String countryname = countryname.countrynames(countrycode);
+    String countryname = country.countrynames(countrycode);
 
     String language = languagehhtp.languagehttp(countrycode); // get countries languages
 
+    String translation = translationary.translationmodule(language.substring(0, language.indexOf(" "))); // gets first word with return from before
+
+    System.out.println(countrycode + " " + countryname + " " + language);
   }
 }
 
