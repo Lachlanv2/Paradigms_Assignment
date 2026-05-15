@@ -8,7 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class country {
-    public static String countrynames(String countrycode) throws InterruptedException, IOException {
+    public static String countryNames(String countrycode) throws InterruptedException, IOException {
         try (HttpClient client = HttpClient.newHttpClient()) {
 
             HttpRequest request = HttpRequest.newBuilder()
@@ -24,11 +24,6 @@ public class country {
             String extractedlanguage = country.getJSONObject("name").getString("common");
 
 
-
-
-            //String languageCode = extractedlanguage.keys().next(); // https://www.baeldung.com/java-org-json
-            //String languageName = extractedlanguage.getString(languageCode);
-            //System.out.println(extractedlanguage);
             return extractedlanguage;
 
         }

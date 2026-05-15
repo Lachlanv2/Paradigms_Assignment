@@ -8,7 +8,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class languagehhtp {
-  public static String languagehttp(String countrycode) throws InterruptedException, IOException {
+  public static String languageHttp(String countrycode) throws InterruptedException, IOException {
     try (HttpClient client = HttpClient.newHttpClient()) {
 
       HttpRequest request = HttpRequest.newBuilder()

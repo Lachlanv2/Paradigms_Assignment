@@ -32,26 +32,6 @@ public class httprequest { //https://www.w3schools.com/java/java_methods_param.a
       return extractedcountry;
 
 
-
-
-
-      // Really bad string editing I tried but failed miserably
-      /*
-      String stringconversion = response.body();
-      //stringconversion = stringconversion.replace("{", "");
-      //stringconversion = stringconversion.replace("}", "");
-      //stringconversion = stringconversion.replace("[", "");
-      //stringconversion = stringconversion.replace("]", "");
-      stringconversion = stringconversion.replace("\"name\"", "\n\"name\""); //https://exatosoftware.com/how-to-add-quotation-marks-within-a-string-in-java/
-      Long countrycount = stringconversion.lines().count(); //count needs Long data type
-      int nocontries = countrycount.intValue(); //conversion back to int
-      int selectedcountry = (int) (Math.random() * nocontries); //https://javabeginnerstutorial.com/code-base/generate-random-number-java-between-two-numbers/
-      String specificLine = stringconversion.lines()
-              .skip(selectedcountry - 1)
-              .findFirst()
-              .orElse("");
-      System.out.println(specificLine);
-      */
     }
   }
 }
