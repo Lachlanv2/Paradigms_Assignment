@@ -20,7 +20,7 @@ public class main {
       System.out.println("\nWhat is your username:");
       String playername = obj.nextLine();
       System.out.println("Let the game begin");
-      int questionno = 9;
+      int questionno = 0;
       int correct = 0;
       Language previouslang;
 
@@ -53,7 +53,7 @@ public class main {
 
 
           System.out.println("You are at Question " + questionno + " Out of 10");
-          System.out.println("Hello World in the other language: " + helloworld + " " + language); //last bit for testing
+          System.out.println("Hello World in the other language: " + helloworld); //last bit for testing
           Scanner obj2 = new Scanner(System.in);
           System.out.println("\nWhat is your guess:");
           String Guess = obj2.nextLine();
@@ -73,7 +73,7 @@ public class main {
             Thread.sleep(2000);
             System.out.println("Next Question\n\n");
 
-          if (questionno >= 10) {
+          if (questionno == 10) {
             System.out.println("\n\n\n\nThe game has finished " + playername);
             System.out.println(playername + " finished with a final score of: " + correct + " Out of 10");
             Scanner obj3 = new Scanner(System.in);
